@@ -324,6 +324,6 @@ If you have any other questions or issues, feel free to ask on [AMD-OSX Discord]
 - [AMD-OSX Community](https://amd-osx.com) for support while making my Hackintosh
 - [SocketByte](https://github.com/SocketByte) for README maintenance and being a great friend :)
 
-![Screenshot](https://drive.google.com/file/d/1Q2NL77OL8oNCaLHc-phDHuQVcoUaX-vf/view?usp=sharing)
+![Screenshot](/ReadmeImage.png?raw=true)
 ## Contact
 Email :- spidermurphy69@gmai.com
