@@ -16,7 +16,7 @@
 
 **macOS version**: 12.4    \
 **OpenCore version**: 0.8.2 \
-**NOTE:-** If you dont't have usb audio adapter then use [VoodooHDA](https://sourceforge.net/projects/voodoohda/files/) and put that kext in "/Library/Extensions/" then restart your mac.[installation Video](https://www.youtube.com/watch?v=Cgd0nkjKUyE) 
+**NOTE:-** If you dont't have usb audio adapter then use [VoodooHDA](https://sourceforge.net/projects/voodoohda/files/) and put that kext in "/Library/Extensions/" then restart your mac.[tutorial Video](https://www.youtube.com/watch?v=Cgd0nkjKUyE) 
 
 ## Table of contents
 
