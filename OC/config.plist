@@ -1708,8 +1708,6 @@
 				<string>ForceDisplayRotationInEFI</string>
 			</array>
 		</dict>
-		<key>LegacyEnable</key>
-		<false/>
 		<key>LegacyOverwrite</key>
 		<false/>
 		<key>LegacySchema</key>
@@ -1859,6 +1857,8 @@
 				<string>HfsPlus.efi</string>
 				<key>Enabled</key>
 				<true/>
+				<key>LoadEarly</key>
+				<false/>
 				<key>Path</key>
 				<string>HfsPlus.efi</string>
 			</dict>
@@ -1869,6 +1869,8 @@
 				<string>OpenRuntime.efi</string>
 				<key>Enabled</key>
 				<true/>
+				<key>LoadEarly</key>
+				<false/>
 				<key>Path</key>
 				<string>OpenRuntime.efi</string>
 			</dict>
