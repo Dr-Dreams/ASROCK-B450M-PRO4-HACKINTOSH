@@ -208,7 +208,7 @@
 			<key>RebuildAppleMemoryMap</key>
 			<true/>
 			<key>ResizeAppleGpuBars</key>
-			<integer>-1</integer>
+			<integer>0</integer>
 			<key>SetupVirtualMap</key>
 			<false/>
 			<key>SignalAppleOS</key>
@@ -395,7 +395,7 @@
 				<key>device_type</key>
 				<string>Host bridge</string>
 				<key>model</key>
-				<string>Matisse Device 24: Function 0</string>
+				<string>Matisse/Vermeer Data Fabric: Device 18h; Function 0</string>
 			</dict>
 			<key>PciRoot(0x0)/Pci(0x18,0x1)</key>
 			<dict>
@@ -406,7 +406,7 @@
 				<key>device_type</key>
 				<string>Host bridge</string>
 				<key>model</key>
-				<string>Matisse Device 24: Function 1</string>
+				<string>Matisse/Vermeer Data Fabric: Device 18h; Function 1</string>
 			</dict>
 			<key>PciRoot(0x0)/Pci(0x18,0x2)</key>
 			<dict>
@@ -417,7 +417,7 @@
 				<key>device_type</key>
 				<string>Host bridge</string>
 				<key>model</key>
-				<string>Matisse Device 24: Function 2</string>
+				<string>Matisse/Vermeer Data Fabric: Device 18h; Function 2</string>
 			</dict>
 			<key>PciRoot(0x0)/Pci(0x18,0x3)</key>
 			<dict>
@@ -428,7 +428,7 @@
 				<key>device_type</key>
 				<string>Host bridge</string>
 				<key>model</key>
-				<string>Matisse Device 24: Function 3</string>
+				<string>Matisse/Vermeer Data Fabric: Device 18h; Function 3</string>
 			</dict>
 			<key>PciRoot(0x0)/Pci(0x18,0x4)</key>
 			<dict>
@@ -439,7 +439,7 @@
 				<key>device_type</key>
 				<string>Host bridge</string>
 				<key>model</key>
-				<string>Matisse Device 24: Function 4</string>
+				<string>Matisse/Vermeer Data Fabric: Device 18h; Function 4</string>
 			</dict>
 			<key>PciRoot(0x0)/Pci(0x18,0x5)</key>
 			<dict>
@@ -450,7 +450,7 @@
 				<key>device_type</key>
 				<string>Host bridge</string>
 				<key>model</key>
-				<string>Matisse Device 24: Function 5</string>
+				<string>Matisse/Vermeer Data Fabric: Device 18h; Function 5</string>
 			</dict>
 			<key>PciRoot(0x0)/Pci(0x18,0x6)</key>
 			<dict>
@@ -461,7 +461,7 @@
 				<key>device_type</key>
 				<string>Host bridge</string>
 				<key>model</key>
-				<string>Matisse Device 24: Function 6</string>
+				<string>Matisse/Vermeer Data Fabric: Device 18h; Function 6</string>
 			</dict>
 			<key>PciRoot(0x0)/Pci(0x18,0x7)</key>
 			<dict>
@@ -472,14 +472,7 @@
 				<key>device_type</key>
 				<string>Host bridge</string>
 				<key>model</key>
-				<string>Matisse Device 24: Function 7</string>
-			</dict>
-			<key>PciRoot(0x0)/Pci(0x1b,0x0)</key>
-			<dict>
-				<key>built-in</key>
-				<data>AQ==</data>
-				<key>layout-id</key>
-				<data>AQAAAA==</data>
+				<string>Matisse/Vermeer Data Fabric: Device 18h; Function 7</string>
 			</dict>
 			<key>PciRoot(0x0)/Pci(0x2,0x0)</key>
 			<dict>
@@ -535,6 +528,17 @@
 				<string>PCI bridge</string>
 				<key>model</key>
 				<string>Navi 10 XL Downstream Port of PCI Express Switch</string>
+			</dict>
+			<key>PciRoot(0x0)/Pci(0x3,0x1)/Pci(0x0,0x0)/Pci(0x0,0x0)/Pci(0x0,0x0)</key>
+			<dict>
+				<key>AAPL,slot-name</key>
+				<string>Internal@0,3,1/0,0/0,0/0,0</string>
+				<key>built-in</key>
+				<data>AQ==</data>
+				<key>device_type</key>
+				<string>VGA compatible controller</string>
+				<key>model</key>
+				<string>Navi 14 [Radeon RX 5500/5500M / Pro 5500M]</string>
 			</dict>
 			<key>PciRoot(0x0)/Pci(0x3,0x1)/Pci(0x0,0x0)/Pci(0x0,0x0)/Pci(0x0,0x1)</key>
 			<dict>
@@ -606,23 +610,23 @@
 			<dict>
 				<key>AAPL,slot-name</key>
 				<string>Internal@0,8,0</string>
-				<key>PciRoot(0x0)/Pci(0x8,0x1)</key>
-				<dict>
-					<key>AAPL,slot-name</key>
-					<string>Internal@0,8,1</string>
-					<key>built-in</key>
-					<data>AQ==</data>
-					<key>device_type</key>
-					<string>PCI bridge</string>
-					<key>model</key>
-					<string>Starship/Matisse Internal PCIe GPP Bridge 0 to bus[E:B]</string>
-				</dict>
 				<key>built-in</key>
 				<data>AQ==</data>
 				<key>device_type</key>
 				<string>Host bridge</string>
 				<key>model</key>
 				<string>Starship/Matisse PCIe Dummy Host Bridge</string>
+			</dict>
+			<key>PciRoot(0x0)/Pci(0x8,0x1)</key>
+			<dict>
+				<key>AAPL,slot-name</key>
+				<string>Internal@0,8,1</string>
+				<key>built-in</key>
+				<data>AQ==</data>
+				<key>device_type</key>
+				<string>PCI bridge</string>
+				<key>model</key>
+				<string>Starship/Matisse Internal PCIe GPP Bridge 0 to bus[E:B]</string>
 			</dict>
 			<key>PciRoot(0x0)/Pci(0x8,0x1)/Pci(0x0,0x0)</key>
 			<dict>
@@ -665,6 +669,8 @@
 				<data>AQ==</data>
 				<key>device_type</key>
 				<string>Audio device</string>
+				<key>layout-id</key>
+				<data>AQAAAA==</data>
 				<key>model</key>
 				<string>Starship/Matisse HD Audio Controller</string>
 			</dict>
@@ -1513,6 +1519,8 @@
 			<false/>
 			<key>AppleXcpmForceBoost</key>
 			<false/>
+			<key>CustomPciSerialDevice</key>
+			<false/>
 			<key>CustomSMBIOSGuid</key>
 			<false/>
 			<key>DisableIoMapper</key>
@@ -1524,6 +1532,8 @@
 			<key>ExtendBTFeatureFlags</key>
 			<false/>
 			<key>ExternalDiskIcons</key>
+			<false/>
+			<key>ForceAquantiaEthernet</key>
 			<false/>
 			<key>ForceSecureBootScheme</key>
 			<false/>
@@ -1545,10 +1555,6 @@
 			<false/>
 			<key>XhciPortLimit</key>
 			<false/>
-			<key>CustomPciSerialDevice</key>
-			<false/>
-			<key>ForceAquantiaEthernet</key>
-			<false/>
 		</dict>
 		<key>Scheme</key>
 		<dict>
@@ -1557,7 +1563,7 @@
 			<key>FuzzyMatch</key>
 			<true/>
 			<key>KernelArch</key>
-			<string>Auto</string>
+			<string>x86_64</string>
 			<key>KernelCache</key>
 			<string>Auto</string>
 		</dict>
@@ -1607,12 +1613,12 @@
 			<integer>0</integer>
 			<key>DisplayLevel</key>
 			<integer>2147483650</integer>
+			<key>LogModules</key>
+			<string>*</string>
 			<key>SysReport</key>
 			<false/>
 			<key>Target</key>
 			<integer>0</integer>
-			<key>LogModules</key>
-			<string>*</string>
 		</dict>
 		<key>Entries</key>
 		<array>
@@ -1664,6 +1670,13 @@
 			<key>Vault</key>
 			<string>Optional</string>
 		</dict>
+		<key>Serial</key>
+		<dict>
+			<key>Init</key>
+			<false/>
+			<key>Override</key>
+			<false/>
+		</dict>
 		<key>Tools</key>
 		<array>
 			<dict>
@@ -1687,13 +1700,6 @@
 				<false/>
 			</dict>
 		</array>
-		<key>Serial</key>
-		<dict>
-			<key>Init</key>
-			<false/>
-			<key>Override</key>
-			<false/>
-		</dict>
 	</dict>
 	<key>NVRAM</key>
 	<dict>
@@ -1702,7 +1708,7 @@
 			<key>4D1EDE05-38C7-4A6A-9CC6-4BCCA8B38C14</key>
 			<dict>
 				<key>DefaultBackgroundColor</key>
-				<data>AAAAAA==</data>
+				<data>v7+/AA==</data>
 			</dict>
 			<key>4D1FDA02-38C7-4A6A-9CC6-4BCCA8B30102</key>
 			<dict>
@@ -1711,20 +1717,20 @@
 			</dict>
 			<key>7C436110-AB2A-4BBB-A880-FE41995C9F82</key>
 			<dict>
+				<key>#INFO (prev-lang:kbd)</key>
+				<string>en:252 (ABC), set 656e3a323532</string>
 				<key>ForceDisplayRotationInEFI</key>
 				<integer>0</integer>
 				<key>SystemAudioVolume</key>
 				<data>Rg==</data>
 				<key>boot-args</key>
-				<string>keepsyms=1 debug=0x100 npci=0x2000 agdpmod=pikera alcid=40</string>
+				<string>keepsyms=1 debug=0x100 npci=0x3000 agdpmod=pikera alcid=1 unfairvga=1	</string>
 				<key>csr-active-config</key>
 				<data>AAAAAA==</data>
 				<key>prev-lang:kbd</key>
 				<string>en-US:0</string>
 				<key>run-efi-updater</key>
 				<string>No</string>
-				<key>#INFO (prev-lang:kbd)</key>
-				<string>en:252 (ABC), set 656e3a323532</string>
 			</dict>
 		</dict>
 		<key>Delete</key>
@@ -1959,7 +1965,7 @@
 			<key>TextRenderer</key>
 			<string>BuiltinGraphics</string>
 			<key>UIScale</key>
-			<integer>0</integer>
+			<integer>1</integer>
 			<key>UgaPassThrough</key>
 			<false/>
 		</dict>
