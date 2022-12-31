@@ -14,8 +14,8 @@
 | OS Disk (NVMe)   | [Western Digital WD SN550 500GB NVMe](https://www.amazon.in/Western-Digital-SN550-Internal-WDS500G2B0C/dp/B07YFF3JCN?th=1)                   |
 | Audio Adapter    | [AROPANA USB 2IN1 Audio Adapter](https://www.amazon.in/AROPANA-Audio-Sound-Card-Black/dp/B07VDCBMDB)                       |
 
-**macOS version**: 12.4    \
-**OpenCore version**: 0.8.2 \
+**macOS version**: 13.1    \
+**OpenCore version**: 0.8.7 \
 **NOTE:-** If you dont't have usb audio adapter then use [VoodooHDA](https://sourceforge.net/projects/voodoohda/files/) and put that kext in "/Library/Extensions/" then restart your mac.[tutorial Video](https://www.youtube.com/watch?v=Cgd0nkjKUyE) 
 
 ## Table of contents
@@ -33,7 +33,7 @@
 - [Credits](#Credits)
 
 ## Software Compatibility
-
+- Ventura (13.1)
 - Monterey (12.x)
 - Big Sur (11.x)
 - Catalina (10.15.x)
