@@ -1,5 +1,5 @@
 # OpenCore EFI for ASROCK-B450M-PRO4-HACKINTOSH
-
+![Screenshot](/ReadmeImage.png?raw=true)
 ## My Specification
 
 | **Component**    | **Model**                                  |
@@ -322,8 +322,4 @@ If you have any other questions or issues, feel free to ask on [AMD-OSX Discord]
 - [tomnic](https://www.macos86.it/profile/69-tomnic/) for libfakeintel.dylib used by Adobe patches
 - [Dortania](https://github.com/dortania) for OpenCore configuration guides
 - [AMD-OSX Community](https://amd-osx.com) for support while making my Hackintosh
-- [SocketByte](https://github.com/SocketByte) for README maintenance and being a great friend :)
-
-![Screenshot](/ReadmeImage.png?raw=true)
-## Contact
-Email :- spidermurphy69@gmai.com
+- [SocketByte](https://github.com/SocketByte) for README maintenance :)
