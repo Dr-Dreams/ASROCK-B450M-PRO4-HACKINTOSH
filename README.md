@@ -1,5 +1,5 @@
 # OpenCore EFI for ASROCK-B450M-PRO4-HACKINTOSH
-![Screenshot](./ReadmeImage.png)
+![ScreenShot](./ReadmeImage.png?raw=true)
 ## My Specification
 
 | **Component**    | **Model**                                  |
