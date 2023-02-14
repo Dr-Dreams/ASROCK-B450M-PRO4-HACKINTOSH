@@ -1558,6 +1558,8 @@
 			<integer>0</integer>
 			<key>Timeout</key>
 			<integer>1</integer>
+			<key>HibernateSkipsPicker</key>
+			<false/>
 		</dict>
 		<key>Debug</key>
 		<dict>
