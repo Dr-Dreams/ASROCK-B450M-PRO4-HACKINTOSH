@@ -1,6 +1,6 @@
 # OpenCore EFI for ASROCK-B450M-PRO4-HACKINTOSH
 
-![System Image](./System_Image.png)
+![System Image](https://github.com/Dr-Dreams/ASROCK-B450M-PRO4-HACKINTOSH/blob/main/System_Image.png)
 
 ## My Specification
 
