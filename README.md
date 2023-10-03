@@ -1,23 +1,24 @@
 # OpenCore EFI for ASROCK-B450M-PRO4-HACKINTOSH
-![ReadmeImage](https://user-images.githubusercontent.com/82662657/211196303-43497dd5-d7bc-4e02-9bc7-fcab1347764a.png)
+
+![System Image](./System_Image.png)
 
 ## My Specification
 
-| **Component**    | **Model**                                  |
-| ---------------- | ------------------------------------------ |
-| CPU              | [AMD Ryzen 5 3500 @ 3.6GHz](https://www.amazon.in/Ryzen-Generation-Desktop-Processor-Socket/dp/B07YZR314W)                  |
-| Motherboard      | [ASROCK B450M PRO4](https://www.asrock.com/mb/AMD/B450M%20Pro4/index.asp)                             |
-| RAM              | [16GB (2 x 8GB) XPG ADATA GAMMIX D30 DDR4 8GB (1x8GB) 3200MHz](https://www.amazon.in/XPG-GAMMIX-3200MHz-Desktop-AX4U320038G16A-SR30/dp/B085HSGQ1Y/ref=sr_1_3?crid=3JML3P4T1FH0O&keywords=xpg&s=computers&sprefix=xpg+%2Ccomputers%2C203&sr=1-3) |
-| GPU              | [GIGABYTE RX 5500XT OC 8GB DUAL FAN](https://www.amazon.in/GIGABYTE-Radeon-Graphics-128-Bit-GV-R55XTOC-8GD/dp/B082BXG6Z5)                             |
-| Audio Chipset    | Realtek ALC892                                    |
-| Ethernet         | Realtek RTL8111                            |
-| WiFi             | [TP-Link USB AC600 Adapter](https://www.amazon.in/TP-Link-Wireless-Adapter-Archer-T2U/dp/B07P681N66)                    |
-| OS Disk (NVMe)   | [Western Digital WD SN550 500GB NVMe](https://www.amazon.in/Western-Digital-SN550-Internal-WDS500G2B0C/dp/B07YFF3JCN?th=1)                   |
-| Audio Adapter    | [AROPANA USB 2IN1 Audio Adapter](https://www.amazon.in/AROPANA-Audio-Sound-Card-Black/dp/B07VDCBMDB)                       |
+| **Component**  | **Model**                                                                                                                                                                                                                                       |
+| -------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| CPU            | [AMD Ryzen 5 3500 @ 3.6GHz](https://www.amazon.in/Ryzen-Generation-Desktop-Processor-Socket/dp/B07YZR314W)                                                                                                                                      |
+| Motherboard    | [ASROCK B450M PRO4](https://www.asrock.com/mb/AMD/B450M%20Pro4/index.asp)                                                                                                                                                                       |
+| RAM            | [16GB (2 x 8GB) XPG ADATA GAMMIX D30 DDR4 8GB (1x8GB) 3200MHz](https://www.amazon.in/XPG-GAMMIX-3200MHz-Desktop-AX4U320038G16A-SR30/dp/B085HSGQ1Y/ref=sr_1_3?crid=3JML3P4T1FH0O&keywords=xpg&s=computers&sprefix=xpg+%2Ccomputers%2C203&sr=1-3) |
+| GPU            | [GIGABYTE RX 5500XT OC 8GB DUAL FAN](https://www.amazon.in/GIGABYTE-Radeon-Graphics-128-Bit-GV-R55XTOC-8GD/dp/B082BXG6Z5)                                                                                                                       |
+| Audio Chipset  | Realtek ALC892                                                                                                                                                                                                                                  |
+| Ethernet       | Realtek RTL8111                                                                                                                                                                                                                                 |
+| WiFi           | [TP-Link USB AC600 Adapter](https://www.amazon.in/TP-Link-Wireless-Adapter-Archer-T2U/dp/B07P681N66)                                                                                                                                            |
+| OS Disk (NVMe) | [Western Digital WD SN550 500GB NVMe](https://www.amazon.in/Western-Digital-SN550-Internal-WDS500G2B0C/dp/B07YFF3JCN?th=1)                                                                                                                      |
+| Audio Adapter  | [AROPANA USB 2IN1 Audio Adapter](https://www.amazon.in/AROPANA-Audio-Sound-Card-Black/dp/B07VDCBMDB)                                                                                                                                            |
 
-**macOS version**: 13.1    \
+**macOS version**: 13.1 \
 **OpenCore version**: 0.8.7 \
-**NOTE:-** If you dont't have usb audio adapter then use [VoodooHDA](https://sourceforge.net/projects/voodoohda/files/) and put that kext in "/Library/Extensions/" then restart your mac.[tutorial Video](https://www.youtube.com/watch?v=Cgd0nkjKUyE) 
+**NOTE:-** If you dont't have usb audio adapter then use [VoodooHDA](https://sourceforge.net/projects/voodoohda/files/) and put that kext in "/Library/Extensions/" then restart your mac.[tutorial Video](https://www.youtube.com/watch?v=Cgd0nkjKUyE)
 
 ## Table of contents
 
@@ -34,6 +35,7 @@
 - [Credits](#Credits)
 
 ## Software Compatibility
+
 - Ventura (13.1)
 - Monterey (12.x)
 - Big Sur (11.x)
@@ -73,6 +75,7 @@ For **AMD Navi 10 Series GPUs (RX 5500, RX 5600, RX 5700)** you need to add `agd
 If you want to control monitor's brightness or HDMI/DP audio volume you need to use [MonitorControl](https://github.com/MonitorControl/MonitorControl) for that.
 
 ### Laptops
+
 All laptops with AMD CPUs are not supported due to integrated GPUs incompatbility.
 
 ### Motherboards
@@ -121,6 +124,7 @@ If you use High Sierra and Realtek 8111 Ethernet Card then you should use [older
 SmallTree kext does not work on Monterey for now. You can try [AppleIGB kext](https://cdn.discordapp.com/attachments/724618275971137568/879288441278435348/AppleIGB.kext.zip), it works on some systems. If it does not work you have to stay on Big Sur and wait for SmallTree's update.
 
 ### WiFi and Bluetooth
+
 If you have wifi Bluetooth Card.
 Only Apple Airport and Fenvi cards work out of the box. [Here](https://dortania.github.io/Wireless-Buyers-Guide/) you can list of all supported cards and needed kexts for them.
 
@@ -135,15 +139,16 @@ Rembember that AirDrop, Handoff, etc. works only on cards with Broadcom chip.
 2. Clone this repository and copy "BOOT" & "OC" directories to your "EFI" directory on your bootable USB. The structure should look somewhat like this: `EFI -> BOOT, OC`.
 
 ### Modifying kernel patches
+
 3. Modify Core Count patches to match your CPU's cores amount.
 
-  - Find three `algrey - Force cpuid_cores_per_package` patches under `Kernel -> Patch` in your config.
-  - Modify these patches for your CPU physical cores. Change **first pair** of `00` in `Replace` of these patches to `Hex value` from below table.
+- Find three `algrey - Force cpuid_cores_per_package` patches under `Kernel -> Patch` in your config.
+- Modify these patches for your CPU physical cores. Change **first pair** of `00` in `Replace` of these patches to `Hex value` from below table.
 
-    - e. g. for Ryzen 7 1700 with 8 Cores three modified patches should look like:
-      - B8 **00** 0000 0000 -> B8 **08** 0000 0000
-      - BA **00** 0000 0000 -> BA **08** 0000 0000
-      - BA **00** 0000 0090 -> BA **08** 0000 0090
+  - e. g. for Ryzen 7 1700 with 8 Cores three modified patches should look like:
+    - B8 **00** 0000 0000 -> B8 **08** 0000 0000
+    - BA **00** 0000 0000 -> BA **08** 0000 0000
+    - BA **00** 0000 0090 -> BA **08** 0000 0090
 
 | **Physical CPU cores** | **Hex value** |
 | ---------------------- | ------------- |
@@ -198,6 +203,7 @@ Rembember that AirDrop, Handoff, etc. works only on cards with Broadcom chip.
 12. When everything work you can disable verbose mode - then you will see Apple's logo instead of logs while booting. To do it you have to remove `-v debug=0x100 keepsyms=1` from `boot-args` in your configuration file.
 
 ### Bootstrap
+
 In general, enabling Bootstrap is not required, but it will protect your OpenCore from being overriden. \
 Remember to do not enable Bootstrap on pendrive - do it only after copying OpenCore to your disk's EFI.
 
@@ -246,14 +252,17 @@ There's also `intel_fast_memset` instruction which, obviously, doesn't exist on 
 If you have problems while running script from file, try to copy and paste it's code to Terminal.
 
 ## DRMs support
+
 DRMs are fixed by default only for Big Sur and newer versions. For older versions you have to:
- 1. Remove `unfairgva=1` from `boot-args` in your configuration file.
- 2. Go [here](https://github.com/acidanthera/WhateverGreen/blob/master/Manual/FAQ.Chart.md) to find correct value for your system.
- 3. Add parameter from _Mode_ to `boot-args` in your configuration file.
+
+1.  Remove `unfairgva=1` from `boot-args` in your configuration file.
+2.  Go [here](https://github.com/acidanthera/WhateverGreen/blob/master/Manual/FAQ.Chart.md) to find correct value for your system.
+3.  Add parameter from _Mode_ to `boot-args` in your configuration file.
     - If parameter from chart does not work try `shikigva=80` or `shikigva=16` - it's common to work even when chart says something another.
- 4. Test DRMs with Netflix in Safari or Apple TV+.
+4.  Test DRMs with Netflix in Safari or Apple TV+.
 
 ## Sleep
+
 Firstly, check if your sleep works out of the box. If it works, you can skip reading this section.
 
 The most common reason of broken sleep on AMD systems are USB problems. \
