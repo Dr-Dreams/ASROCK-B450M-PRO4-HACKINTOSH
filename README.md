@@ -2,6 +2,21 @@
 
 ![System Image](https://github.com/Dr-Dreams/ASROCK-B450M-PRO4-HACKINTOSH/blob/main/System_Image.png)
 
+## Table of contents
+
+- [My PC Specification](#my-specification)
+- [Software Compatibility](#Software-Compatibility)
+- [Hardware Compatibility](#Hardware-Compatibility)
+- [Installation](#Installation)
+- [BIOS Settings](#BIOS-Settings)
+- [PAT Patch](#PAT-Patch)
+- [MKL and Intel Fast Memset Patch](#MKL-and-Intel-Fast-Memset-Patch)
+- [DRMs support](#DRMs-support)
+- [Sleep](#Sleep)
+- [Virtualization](#Virtualization)
+- [Guides and troubleshooting](#Guides-and-troubleshooting)
+- [Credits](#Credits)
+
 ## My Specification
 
 | **Component**  | **Model**                                                                                                                                                                                                                                       |
@@ -16,34 +31,21 @@
 | OS Disk (NVMe) | [Western Digital WD SN550 500GB NVMe](https://www.amazon.in/Western-Digital-SN550-Internal-WDS500G2B0C/dp/B07YFF3JCN?th=1)                                                                                                                      |
 | Audio Adapter  | [AROPANA USB 2IN1 Audio Adapter](https://www.amazon.in/AROPANA-Audio-Sound-Card-Black/dp/B07VDCBMDB)                                                                                                                                            |
 
-**macOS version**: 13.1 \
-**OpenCore version**: 0.8.7 \
+**macOS version**: 14.0 \
+**OpenCore version**: 0.9.5 \
 **NOTE:-** If you dont't have usb audio adapter then use [VoodooHDA](https://sourceforge.net/projects/voodoohda/files/) and put that kext in "/Library/Extensions/" then restart your mac.[tutorial Video](https://www.youtube.com/watch?v=Cgd0nkjKUyE)
-
-## Table of contents
-
-- [Software Compatibility](#Software-Compatibility)
-- [Hardware Compatibility](#Hardware-Compatibility)
-- [Installation](#Installation)
-- [BIOS Settings](#BIOS-Settings)
-- [PAT Patch](#PAT-Patch)
-- [MKL and Intel Fast Memset Patch](#MKL-and-Intel-Fast-Memset-Patch)
-- [DRMs support](#DRMs-support)
-- [Sleep](#Sleep)
-- [Virtualization](#Virtualization)
-- [Guides](#Guides)
-- [Credits](#Credits)
 
 ## Software Compatibility
 
-- Ventura (13.1)
+- Sonoma (14.x)
+- Ventura (13.x)
 - Monterey (12.x)
 - Big Sur (11.x)
 - Catalina (10.15.x)
 - Mojave (10.14.x)
 - High Sierra (10.13.x)
 
-There were some reports about issues that occur while using MSI motherboards on Monterey Beta 3. The only possible solution to this problem as of right now is to downgrade to Monterey Beta 2 and wait for a confirmed workaround.
+**Used OpenCore version**: 0.9.5
 
 ## Hardware Compatibility
 
@@ -121,11 +123,12 @@ If you experience any issues with your network connection, then your best bet wo
 
 If you use High Sierra and Realtek 8111 Ethernet Card then you should use [older version of kext](https://github.com/Mieze/RTL8111_driver_for_OS_X/releases/tag/v2.2.2).
 
+If you have issues with network card on Monterey or newer try adding `e1000=0` to `boots-args`.
+
 SmallTree kext does not work on Monterey for now. You can try [AppleIGB kext](https://cdn.discordapp.com/attachments/724618275971137568/879288441278435348/AppleIGB.kext.zip), it works on some systems. If it does not work you have to stay on Big Sur and wait for SmallTree's update.
 
 ### WiFi and Bluetooth
 
-If you have wifi Bluetooth Card.
 Only Apple Airport and Fenvi cards work out of the box. [Here](https://dortania.github.io/Wireless-Buyers-Guide/) you can list of all supported cards and needed kexts for them.
 
 Rembember that AirDrop, Handoff, etc. works only on cards with Broadcom chip.
@@ -142,13 +145,14 @@ Rembember that AirDrop, Handoff, etc. works only on cards with Broadcom chip.
 
 3. Modify Core Count patches to match your CPU's cores amount.
 
-- Find three `algrey - Force cpuid_cores_per_package` patches under `Kernel -> Patch` in your config.
+- Find four `algrey - Force cpuid_cores_per_package` patches under `Kernel -> Patch` in your config.
 - Modify these patches for your CPU physical cores. Change **first pair** of `00` in `Replace` of these patches to `Hex value` from below table.
 
   - e. g. for Ryzen 7 1700 with 8 Cores three modified patches should look like:
     - B8 **00** 0000 0000 -> B8 **08** 0000 0000
     - BA **00** 0000 0000 -> BA **08** 0000 0000
     - BA **00** 0000 0090 -> BA **08** 0000 0090
+    - BA **00** 0000 00 -> BA **08** 0000 00
 
 | **Physical CPU cores** | **Hex value** |
 | ---------------------- | ------------- |
@@ -157,6 +161,8 @@ Rembember that AirDrop, Handoff, etc. works only on cards with Broadcom chip.
 | 8 Cores                | `08`          |
 | 12 Cores               | `0C`          |
 | 16 Cores               | `10`          |
+| 24 Cores               | `18`          |
+| 32 Cores               | `20`          |
 
 ### SMBIOS
 
@@ -245,9 +251,9 @@ To switch to another patch look for `mtrr_update_action` in `config.plist`. Then
 
 ## MKL and Intel Fast Memset Patch
 
-Some applications for macOS use MKL - Math Kernel Library. Unfortunately, it does not work on AMD CPUs natively - we need to patch it with [this script](/Resources/ryzen_patch.sh).
+Some applications for macOS use MKL - Math Kernel Library. Unfortunately, it does not work on AMD CPUs natively - we need to patch it with [this script](https://github.com/mikigal/ryzen-hackintosh/blob/master/Resources/ryzen_patch.sh).
 
-There's also `intel_fast_memset` instruction which, obviously, doesn't exist on AMD systems. It's very common in Adobe software - you can simply fix it by running [this script](/Resources/adobe_patch.sh). Older versions of Adobe software (e. g. up to 22.3.1 for Photoshop) need it's [legacy version](/Resources/adobe_patch_legacy.sh). For details about Adobe patching check thead on [macos86.it](https://www.macos86.it/topic/4822-photoshop-after-effects-cc-2021-premiere-pro-cc-2021-154-amd-hackintosh-fix/).
+There's also `intel_fast_memset` instruction which, obviously, doesn't exist on AMD systems. It's very common in Adobe software - you can simply fix it by running [this script](https://github.com/mikigal/ryzen-hackintosh/blob/master/Resources/adobe_patch.sh). Older versions of Adobe software (e. g. up to 22.3.1 for Photoshop) need it's [legacy version](https://github.com/mikigal/ryzen-hackintosh/blob/master/Resources/adobe_patch_legacy.sh). For details about Adobe patching check thead on [macos86.it](https://www.macos86.it/topic/4822-photoshop-after-effects-cc-2021-premiere-pro-cc-2021-154-amd-hackintosh-fix/).
 
 If you have problems while running script from file, try to copy and paste it's code to Terminal.
 
@@ -268,10 +274,6 @@ Firstly, check if your sleep works out of the box. If it works, you can skip rea
 The most common reason of broken sleep on AMD systems are USB problems. \
 You have to map your USB ports. If you have working Windows instance I recommend [this tool](https://github.com/usbtoolbox/tool), otherwise you have to [do it manually](https://dortania.github.io/OpenCore-Post-Install/usb/#macos-and-the-15-port-limit). \
 After mapping remember to disable `Kernel -> Quriks -> XhciPortLimit` in your configuration file.
-
-If map does not fix your issue you can try to patch `_STA` method of your USB controllers. Go to `ACPI -> Add` in your configuration file and set `Enabled` to `true` under `SSTD-SLEEP` section. By default this SSDT patches `_SB.PCI0.GPP2.PTXH` device. In most cases your controller will have another address. \
-You can find it with [Hackintool](https://github.com/headkaze/Hackintool) - go to `PCIe` tab, then look for devices with `USB controller` value under `Subclass`. When you find address of your controller you have to open `SSDT-SLEEP.aml` with [MaciASL](https://github.com/acidanthera/MaciASL) and change addresses.
-If you have more than one controller you can try to patch `_STA` for every of them.
 
 If USB fixes does not help, probably something another is broken. You can read more detailed guide about it on [Dortania](https://dortania.github.io/OpenCore-Post-Install/universal/sleep.html).
 
@@ -309,7 +311,7 @@ Use the following configuration for best results.
 - 3D Acceleration: DirectX 9
 - OS: Windows 7 (SP1, build 7601) with Aero theme disabled.
 
-## Guides
+## Guides and troubleshooting
 
 - Creating USB installer: [\*click\*](https://dortania.github.io/OpenCore-Install-Guide/installer-guide/)
 - OpenCore configuration: [\*click\*](https://dortania.github.io/OpenCore-Install-Guide/AMD/zen.html)
@@ -318,6 +320,10 @@ Use the following configuration for best results.
 - ACPI patching: [\*click\*](https://dortania.github.io/Getting-Started-With-ACPI/)
 
 If you have any other questions or issues, feel free to ask on [AMD-OSX Discord](https://discord.gg/EfCYAJW) or [Forum](https://forum.amd-osx.com).
+
+Due to the diversity of configurations, I am unable to assist with issues related to specific computer specifications. For troubleshooting, I recommend starting with inquiries on the AMD-OSX Discord.
+
+Please create an Issue on GitHub primarily for cases concerning more general problems.
 
 ## Credits
 
@@ -332,4 +338,4 @@ If you have any other questions or issues, feel free to ask on [AMD-OSX Discord]
 - [tomnic](https://www.macos86.it/profile/69-tomnic/) for libfakeintel.dylib used by Adobe patches
 - [Dortania](https://github.com/dortania) for OpenCore configuration guides
 - [AMD-OSX Community](https://amd-osx.com) for support while making my Hackintosh
-- [SocketByte](https://github.com/SocketByte) for README maintenance :)
+- [SocketByte](https://github.com/SocketByte) for README maintenance and being a great friend :)
