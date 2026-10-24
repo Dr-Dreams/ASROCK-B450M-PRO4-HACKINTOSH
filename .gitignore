@@ -1,0 +1,12 @@
+# macOS AppleDouble files (._filename)
+._*
+
+# Other macOS junk
+.DS_Store
+.AppleDouble
+.LSOverride
+.Spotlight-V100
+.Trashes
+.fseventsd
+.TemporaryItems
+.VolumeIcon.icns
